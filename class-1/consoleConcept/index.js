@@ -1,5 +1,5 @@
 let http = require("http");
-
+/*
 let server = http.createServer((req, res) => {
     if (req.url == "/") {
       res.writeHead(200, { "Content-type": "text/html" });
@@ -18,3 +18,17 @@ let server = http.createServer((req, res) => {
   
 server.listen(5050); // Corrected the method name to listen
 console.log("running.."); // Corrected the spelling of "running"
+*/
+
+
+
+const fs = require('fs');
+http.createServer((req,res)=>{
+  fs.readFile('demo.txt',function(error,data){
+    res.write(data);
+    res.end();
+  })
+
+}).listen(400,function(){
+  console.log("Running.....")
+})
