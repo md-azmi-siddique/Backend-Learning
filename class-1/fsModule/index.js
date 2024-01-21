@@ -100,17 +100,22 @@ http.createServer((req,res)=>{
 */
 
 // Debug
+/*
 const http = require('http');
 const fs= require('fs');
 http.createServer((req,res)=>{
-    fs.unlink('demo1.txt',(error)=>{
-        if(error){
-            res.end('Delete Failed');
-        }else{
-            res.end('Delete Successful');
-        }
-    })
- 
+    let a = 20;
+    let b =40;
+    let c =60;
+    let d = 100;
+
+    try{
+        let sum = a+b+c+d+e;
+    }catch(error){
+        console.log(error)
+    }
+    res.end(sum)
 }).listen(4040, ()=>{
     console.log("Running.....");
 })
+*/
