@@ -10,7 +10,7 @@ console.log(urlObj.search)
 */
 
 
-
+// CRUD
 //Create file
 /*
 const http = require('http');
@@ -35,7 +35,8 @@ http.createServer((req,res)=>{
 const http = require('http');
 const fs= require('fs');
 http.createServer((req,res)=>{
-    fs.readFile('demo1.txt',(error,data)=>{
+    fs.readFile('demo1.html',(error,data)=>{
+        res.writeHead(200,{'Content-Type':'text/html'})
         res.write(data)
         res.end();
     })
@@ -50,7 +51,7 @@ http.createServer((req,res)=>{
 const http = require('http');
 const fs= require('fs');
 http.createServer((req,res)=>{
-    fs.appendFile('demo1.txt', '\nhello hello', (error)=>{
+    fs.appendFile('demo.txt', '\nhello', (error)=>{
         if(error){
             res.end('Creation Failed');
         }else{
@@ -98,6 +99,22 @@ http.createServer((req,res)=>{
     console.log("Running.....");
 })
 */
+
+
+const fs = require('fs');
+const http = require('http');
+
+http.createServer((req,res)=>{
+    fs.exists('test.txt',(e)=>{
+        if(e){
+            res.end("File Exist")
+        }else{
+            res.end("File Not Exist")
+        }
+    })
+}).listen(4040,()=>{
+    console.log("Running..");
+})
 
 // Debug
 /*
