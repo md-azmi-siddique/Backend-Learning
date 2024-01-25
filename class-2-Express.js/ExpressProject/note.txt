@@ -1,0 +1,7 @@
+Model = MongoDB-Schema
+
+Controller = Manage req,res --> Route
+
+Route is a path
+
+//Hit the controller function from routers with api.js

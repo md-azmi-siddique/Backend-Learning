@@ -100,7 +100,8 @@ http.createServer((req,res)=>{
 })
 */
 
-
+//check a file exist or not
+/*
 const fs = require('fs');
 const http = require('http');
 
@@ -115,6 +116,8 @@ http.createServer((req,res)=>{
 }).listen(4040,()=>{
     console.log("Running..");
 })
+*/
+
 
 // Debug
 /*
