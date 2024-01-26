@@ -8,9 +8,9 @@ exports.DeleteStudent=(req,res)=>{
 }
 
 exports.UpdateStudent=(req,res)=>{
-
+    res.end("update")
 }
 
 exports.ReadStudent=(req,res)=>{
-    res.end("Create")
+    res.end("Read")
 }

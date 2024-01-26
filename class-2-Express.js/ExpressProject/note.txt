@@ -1,7 +1,10 @@
 Model = MongoDB-Schema
 
 Controller = Manage req,res --> Route
+controller name -> Name of feature
+**controller is a collection of functions
 
 Route is a path
 
 //Hit the controller function from routers with api.js
+
