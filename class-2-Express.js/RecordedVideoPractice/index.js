@@ -2,6 +2,7 @@ const express = require("express")
 
 const app = new express()
 
+//String response
 app.get("/one",(req,res)=>{
     res.end("One")
 })
@@ -49,6 +50,8 @@ app.get("/five1", (req,res)=>{
 app.get("/five2", (req,res)=>{
     res.end("Redirect from five1")
 })
+
+
 app.listen(8080,()=>{
     console.log("Server Running")
 })
