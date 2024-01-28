@@ -8,3 +8,6 @@ Route is a path
 
 //Hit the controller function from routers with api.js
 
+Middleware is for the security purpose
+
+
