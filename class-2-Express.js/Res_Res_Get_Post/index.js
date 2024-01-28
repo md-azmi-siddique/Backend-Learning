@@ -20,8 +20,26 @@ app.get("/header", (req, res) => {
     res.end(`${firstName} and ${lastName} is header`)
 });
 
+//simple post request=>spr
+app.post("/spr",(req,res)=>{
+    res.send("This is post request")
+})
+
+//res query = rq
+app.post("/rq",(req,res)=>{
+    let firstName = req.query.firstName;
+    let lastName = req.query.lastName;
+    res.send(`${firstName} ${lastName}`)
+})
+
+//rh
+app.post("/rh",(req,res)=>{
+    let firstName = req.header("firstName");
+    let lastName = req.header("lastName");
+    res.send(`${firstName} ${lastName}`)
+})
 
 
 app.listen(3030,()=>{
-    console.log("Server Running")
+    console.log("Server Running 3030")
 })
