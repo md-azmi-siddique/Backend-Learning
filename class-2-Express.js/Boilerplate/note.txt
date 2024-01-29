@@ -11,3 +11,8 @@ Route is a path
 Middleware is for the security purpose
 
 
+/*
+* Middleware - App Security
+* Multer - for file upload
+*/
+
