@@ -1,6 +1,6 @@
 const express = require('express')
 const multer  = require('multer')
-const {resolve} = require("path");
+const {resolve, join} = require("path");
 // const path = require('path');
 //
 // const  storage = multer.diskStorage({
@@ -76,3 +76,6 @@ exports.ReadStudent=(req,res)=>{
     res.end("Read")
 }
 
+// exports.Home = (req, res) => {
+//     res.sendFile(join(__dirname, '../view/index.html'));
+// };

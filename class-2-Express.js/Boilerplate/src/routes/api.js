@@ -16,6 +16,7 @@ router.delete("/delete", StudentController.DeleteStudent);
 
 router.post("/UploadStudentPhoto", StudentController.UploadStudentPhoto);
 
+// router.get("/", StudentController.Home)
 
 module.exports=router;
 
