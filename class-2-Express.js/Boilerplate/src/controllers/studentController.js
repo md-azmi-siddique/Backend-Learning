@@ -1,34 +1,57 @@
 const express = require('express')
 const multer  = require('multer')
-const path = require("path");
+// const path = require('path');
+//
+// const  storage = multer.diskStorage({
+//     destination:(req,file,cb)=>{
+//         cb(null,path.resolve(__dirname,'..','files'))
+//     },
+//     filename:(req,file,cb)=>{
+//         cb(null,file.originalname)
+//     }
+// })
+//
+// const upload = multer({storage:storage})
+//
+// //Upload Student Photo
+// exports.UploadStudentPhoto=async (req,res)=>{
+//     const moveFile = upload.single('myImg');
+//     await new Promise(
+//         (resolve, reject)=>{
+//             moveFile(req,{},(err)=>{
+//                 if(err){
+//                     reject(err)
+//                 }
+//                 else {
+//                     resolve()
+//                 }
+//             })
+//         }
+//     )
+//     return res.end("File Upload Successful")
+// }
 
-const  storage = multer.diskStorage({
-    destination:(req,file,cb)=>{
-        cb(null,path.resolve(__dirname,'..','files'))
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './files'); // Specify the destination folder
     },
-    filename:(req,file,cb)=>{
-        cb(null,file.originalname)
+    filename: function (req, file, cb) {
+        cb(null, file.originalname); // Retain original filename
     }
-})
+});
 
-const upload = multer({storage:storage})
+const upload = multer({storage:storage}).single("myFile")
 
 //Upload Student Photo
-exports.UploadStudentPhoto=async (req,res)=>{
-    const moveFile = upload.single('myImg');
-    await new Promise(
-        (resolve, reject)=>{
-            moveFile(req,{},(err)=>{
-                if(err){
-                    reject(err)
-                }
-                else {
-                    resolve()
-                }
-            })
+exports.UploadStudentPhoto= (req,res)=>{
+    upload(req,res,(err)=>{
+        if(err){
+            res.send("Upload Failed")
         }
-    )
-    return res.end("File Upload Successful")
+        else {
+            res.send("File Upload Successful")
+        }
+    })
 }
 
 //Create Student
