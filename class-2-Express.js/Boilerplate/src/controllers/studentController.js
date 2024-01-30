@@ -1,5 +1,6 @@
 const express = require('express')
 const multer  = require('multer')
+const {resolve} = require("path");
 // const path = require('path');
 //
 // const  storage = multer.diskStorage({
@@ -33,7 +34,8 @@ const multer  = require('multer')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, './files'); // Specify the destination folder
+        // cb(null, '.../files'); // Specify the destination folder
+        cb(null,resolve(__dirname,'..','files'))
     },
     filename: function (req, file, cb) {
         cb(null, file.originalname); // Retain original filename
