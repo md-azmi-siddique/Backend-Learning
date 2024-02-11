@@ -5,4 +5,8 @@ hpp -> parameter pollution
 helmet -> security package
 
 **************************************
-"type": "module" -> add on package.json to write on ES
+"type": "module" -> add on package.json to write on ES6
+
+****************************************
+
+src -> controllers, routes, models
