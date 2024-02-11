@@ -6,3 +6,9 @@ helmet -> security package
 
 **************************************
 "type": "module" -> add on package.json to write on ES
+
+*****************************************
+
+Using const app = express() is the entry point for building web applications with Express.js.
+It empowers you to handle HTTP requests, define routes, leverage middleware, and create versatile
+web-based solutions.
