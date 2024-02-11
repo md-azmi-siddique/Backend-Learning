@@ -10,3 +10,7 @@ helmet -> security package
 ****************************************
 
 src -> controllers, routes, models
+
+*********************************************
+
+All Middleware should be place before configure Route

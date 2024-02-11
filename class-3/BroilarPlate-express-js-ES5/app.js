@@ -5,16 +5,19 @@ const hpp = require("hpp")
 const cors = require("cors")
 const cookie = require("cookie-parser")
 const helmet = require("helmet")
+
+//import from export files
 const router = require("./src/routes/api");
 const app = express()
 
-/*Middle Ware Implementation */
+/*MiddleWare Implementation */
 
 app.use(cors())
 app.use(helmet())
 app.use(hpp())
 
-const limiter = rateLimit({windowMs: 15 * 60 * 100, max: 300})
+//limit for request
+const limiter = rateLimit({windowMs: 15 * 60 * 100, max: 300}) 
 app.use(limiter);
 app.use(cookie())
 
@@ -35,5 +38,14 @@ app.use(express.urlencoded({limit:false}))
 
 //api Route Connect
 app.use("/api",router)
+
+//undefined route
+app.use('*', (req,res)=>{
+    res.status(404).json({
+        status: "Fail",
+        data: "Not Found Anything on this URL"
+
+    })
+})
 
 module.exports = app;
