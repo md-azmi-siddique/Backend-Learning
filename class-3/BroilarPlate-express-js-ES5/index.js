@@ -1,5 +1,5 @@
-import app from "./app.js";
+const app = require("./app")
 
 app.listen(4000,()=>{
-    console.log("Running")
+    console.log("Running 4000")
 })

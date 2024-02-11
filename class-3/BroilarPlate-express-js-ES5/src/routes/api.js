@@ -1,11 +1,10 @@
-import express from "express";
-import * as WelcomeController from "../controllers/WelcomeController.js";
-import {welcome, welcome1, welcome2} from "../controllers/WelcomeController.js";
+const express = require("express");
+const WelcomeController = require("../controllers/WelcomeController");
 
 const router = express.Router();
 
-router.get("/", welcome)
-router.get("/welcome1", welcome1)
-router.get("/welcome2", welcome2)
+router.get("/", WelcomeController.welcome)
+router.get("/welcome1", WelcomeController.welcome1)
+router.get("/welcome2", WelcomeController.welcome2)
 
-export default router
+module.exports=router;

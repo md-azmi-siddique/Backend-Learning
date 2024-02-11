@@ -1,11 +1,11 @@
-import express from 'express'
-import mongoose from 'mongoose'
-import rateLimit from "express-rate-limit";
-import hpp from "hpp"
-import  cors from "cors"
-import cookie from "cookie-parser";
-import helmet from "helmet";
-import router from "./src/routes/api.js";
+const express = require("express");
+const mongoose = require("mongoose")
+const rateLimit = require("express-rate-limit")
+const hpp = require("hpp")
+const cors = require("cors")
+const cookie = require("cookie-parser")
+const helmet = require("helmet")
+const router = require("./src/routes/api");
 const app = express()
 
 /*Middle Ware Implementation */
@@ -34,6 +34,6 @@ app.use(express.urlencoded({limit:false}))
 
 
 //api Route Connect
-app.use("/",router)
+app.use("/api",router)
 
-export default app;
+module.exports = app;
