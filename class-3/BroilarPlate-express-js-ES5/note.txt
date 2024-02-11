@@ -1,0 +1,8 @@
+express-rate-limit -> to prevent DOS attack
+express-validator -> validator for backend
+cookie-parser -> for handle cookie from backend
+hpp -> parameter pollution
+helmet -> security package
+
+**************************************
+"type": "module" -> add on package.json to write on ES
