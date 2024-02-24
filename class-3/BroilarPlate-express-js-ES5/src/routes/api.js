@@ -4,10 +4,11 @@ const router = express.Router();
 const WelcomeController = require("../controllers/WelcomeController");
 const {Hello1} = require("../controllers/HelloController");
 // const HelloController = require("../controllers/HelloController");
+const AuthMiddleware = require("../middlewares/AuthMiddleware");
 
 
-router.get("/", WelcomeController.welcome)
-router.get("/welcome1", WelcomeController.welcome1)
+router.get("/",AuthMiddleware, WelcomeController.welcome)
+router.get("/welcome1",AuthMiddleware, WelcomeController.welcome1)
 router.get("/welcome2", WelcomeController.welcome2)
 
 //from record
